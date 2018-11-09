@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script> <!--grabbed this from vuejs.org under get started under installation under cdm-->
+    <title>Vue JS</title>
+</head>
+<body>
+    <main id="app">
+            <h3>{{ message }}</h3>
+
+            targetURL : "http://google.ca"
+
+            <ul>
+                <li v-for="fruit in deliciousFruit">
+                    <p v-on:click="logFruit">{{ fruit.name }} is {{ fruit.flavour }}</p>
+                </li>
+            </ul>
+
+
+            <a :class="{ 'no-decorate' : anchorOff }" :href="targetURL" target="_blank">{{ targetURL }}</a> <!-- :class is a class binding --> <!--takes the underline off-->
+
+            <p v-if="hazVue"> <!--if true it will show up, if not, it will not-->
+
+                {{ vuemessage }}
+
+            </p> 
+    </main>
+
+    <footer id="footer">
+        {{ footermessage }} <!--this is outside the main tag. main has the id app, vue is looking for that id-->
+
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
